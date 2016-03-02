@@ -32,25 +32,20 @@ public class WebClient {
      * @return
      */
     public String post(String json) {
+        String jsonResposta = null;
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPost post = new HttpPost("http://localhost:8080/buscaralunos");
+            HttpPost post = new HttpPost(url);
             post.setEntity(new StringEntity(json));
             post.setHeader("Accept", "application/json");
             post.setHeader("Content-type", "application/json");
 
             HttpResponse response = httpClient.execute(post);
 
-            String jsonResposta = EntityUtils.toString(response.getEntity());
-
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+            jsonResposta = EntityUtils.toString(response.getEntity());
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return jsonResposta;
     }
 }

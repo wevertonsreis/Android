@@ -21,9 +21,11 @@ import br.com.caelum.cadastro.aluno.activity.listener.ListaOnItemLongClickListen
 import br.com.caelum.cadastro.aluno.adapter.AlunoAdapter;
 import br.com.caelum.cadastro.aluno.converter.AlunoConverter;
 import br.com.caelum.cadastro.aluno.dao.AlunoDAO;
+import br.com.caelum.cadastro.aluno.task.EnviaAlunosTask;
 import br.com.caelum.cadastro.comum.Extras;
 import br.com.caelum.cadastro.comum.helper.DBHelper;
 import br.com.caelum.cadastro.aluno.model.Aluno;
+import br.com.caelum.cadastro.support.WebClient;
 import br.com.caelum.cadastrocaelum.R;
 
 public class ListaAlunosActivity extends AppCompatActivity {
@@ -58,13 +60,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
                 startActivity(irParaOFormulario);
                 return false;
             case R.id.menu_enviar_alunos:
-                DBHelper dbHelper = new DBHelper(this);
-                AlunoDAO alunoDAO = new AlunoDAO(dbHelper);
-                List<Aluno> listaDeAlunos = alunoDAO.getLista();
-                alunoDAO.close();
-                String json = new AlunoConverter().toJSON(listaDeAlunos);
-
-                Toast.makeText(this, json, Toast.LENGTH_LONG).show();
+                new EnviaAlunosTask(this).execute();
                 return false;
             default:
                 return super.onOptionsItemSelected(item);
