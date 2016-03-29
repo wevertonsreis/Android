@@ -67,6 +67,17 @@ public class AlunoAdapter extends BaseAdapter {
             ImageView itemFoto = (ImageView) linha.findViewById(R.id.item_foto);
             itemFoto.setImageBitmap(fotoReduzida);
         }
+
+        TextView itemTelefone = (TextView)linha.findViewById(R.id.telefone);
+        if (itemTelefone != null){
+            itemTelefone.setText(aluno.getTelefone());
+        }
+
+        TextView itemSite = (TextView)linha.findViewById(R.id.site);
+        if (itemSite != null) {
+            itemSite.setText(aluno.getSite());
+        }
+
         return linha;
     }
 }
