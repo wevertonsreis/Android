@@ -29,10 +29,10 @@
             </intent-filter>
 
         </activity>
-        <activity android:name="br.com.caelum.cadastro.aluno.activity.FormularioActivity">
-        </activity>
-        <activity android:name="br.com.caelum.cadastro.aluno.activity.VerSite">
-        </activity>
+
+        <activity android:name="br.com.caelum.cadastro.aluno.activity.FormularioActivity"/>
+        <activity android:name="br.com.caelum.cadastro.aluno.activity.VerSite"/>
+        <activity android:name="br.com.caelum.cadastro.aluno.activity.ProvasActivity"/>
 
         <receiver android:name="br.com.caelum.cadastro.aluno.receiver.SMSReceiver" android:enabled="true">
             <intent-filter>
