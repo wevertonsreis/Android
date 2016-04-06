@@ -13,6 +13,7 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.List;
 
+import br.com.caelum.cadastro.aluno.activity.ProvasActivity;
 import br.com.caelum.cadastro.aluno.model.Prova;
 import br.com.caelum.cadastrocaelum.R;
 
@@ -39,6 +40,7 @@ public class ListaProvasFragment extends Fragment {
         listViewProvas.setAdapter(adapter);
 
         listViewProvas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -46,6 +48,8 @@ public class ListaProvasFragment extends Fragment {
 
                 Toast.makeText(getContext(),"Prova = " + prova, Toast.LENGTH_SHORT).show();
 
+                ProvasActivity calendarioProvas = (ProvasActivity) getActivity();
+                calendarioProvas.selecionaProva(prova);
             }
         });
 
