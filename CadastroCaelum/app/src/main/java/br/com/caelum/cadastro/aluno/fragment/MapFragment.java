@@ -11,6 +11,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.List;
 
 import br.com.caelum.cadastro.aluno.dao.AlunoDAO;
+import br.com.caelum.cadastro.aluno.listener.AtualizadorDeLocalizacao;
 import br.com.caelum.cadastro.aluno.model.Aluno;
 import br.com.caelum.cadastro.aluno.util.Localizador;
 import br.com.caelum.cadastro.comum.helper.DBHelper;
@@ -22,6 +23,8 @@ public class MapFragment extends SupportMapFragment {
         super.onResume();
 
         Localizador localizador = new Localizador(getActivity());
+
+        new AtualizadorDeLocalizacao(getActivity(),this);
 
         DBHelper dbHelper = new DBHelper(getActivity());
         AlunoDAO alunoDAO = new AlunoDAO(dbHelper);
@@ -37,10 +40,9 @@ public class MapFragment extends SupportMapFragment {
                 getMap().addMarker(markerOptions);
             }
         }
-
     }
 
-    private void centralizaNo(LatLng local) {
+    public void centralizaNo(LatLng local) {
         GoogleMap googleMap = getMap();
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(local, 17));
     }
