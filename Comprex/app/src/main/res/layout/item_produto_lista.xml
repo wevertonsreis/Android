@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/activity_item_produto_lista_imagem"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/produto_melancia"/>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/activity_item_produto_lista_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Produto"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/activity_item_produto_lista_valor_unitario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="R$ 0,00"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/activity_item_produto_lista_quantidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/activity_item_produto_lista_valor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="R$ 50,00"
+        android:textSize="30dp"
+        android:textAlignment="center" />
+
+</LinearLayout>
