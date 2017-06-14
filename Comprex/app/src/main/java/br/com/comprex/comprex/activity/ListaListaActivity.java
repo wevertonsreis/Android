@@ -3,6 +3,7 @@ package br.com.comprex.comprex.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -40,16 +41,17 @@ public class ListaListaActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.lista_toolbar);
         setSupportActionBar(toolbar);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         fab = (FloatingActionButton) findViewById(R.id.lista_fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FormularioListaActivity formularioListaActivity = new FormularioListaActivity();
-
                 Intent intentIrParaFormulario = new Intent(ListaListaActivity.this, FormularioListaActivity.class);
                 intentIrParaFormulario.putExtra("mercado", mercado);
-                startActivity(intentIrParaFormulario);
+                startActivityForResult(intentIrParaFormulario, 1);
 
             }
         });
@@ -63,7 +65,6 @@ public class ListaListaActivity extends AppCompatActivity {
 
                 Intent intentIrParaListaProduto = new Intent(ListaListaActivity.this, ListaProdutoListaActivity.class);
                 intentIrParaListaProduto.putExtra("lista", lista);
-
                 startActivity(intentIrParaListaProduto);
             }
         });
@@ -77,6 +78,11 @@ public class ListaListaActivity extends AppCompatActivity {
         super.onResume();
         carregarLista();
         atualizarVisibilidadeImagemInformativa();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     /**

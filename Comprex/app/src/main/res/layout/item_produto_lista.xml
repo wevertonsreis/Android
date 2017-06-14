@@ -9,10 +9,10 @@
         android:id="@+id/activity_item_produto_lista_imagem"
         android:layout_width="100dp"
         android:layout_height="match_parent"
-        android:src="@drawable/produto_melancia"/>
+        android:src="@drawable/produto_melancia" />
 
     <LinearLayout
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -21,21 +21,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Produto"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/activity_item_produto_lista_valor_unitario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="R$ 0,00"
-            android:textSize="15dp" />
+            android:textSize="10dp" />
 
         <TextView
             android:id="@+id/activity_item_produto_lista_quantidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="5"
-            android:textSize="15dp" />
+            android:textSize="10dp" />
 
     </LinearLayout>
 
@@ -43,9 +43,8 @@
         android:id="@+id/activity_item_produto_lista_valor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:text="R$ 50,00"
-        android:textSize="30dp"
-        android:textAlignment="center" />
+        android:textSize="20dp" />
 
 </LinearLayout>

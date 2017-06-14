@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.NumberPicker;
+import android.widget.Toast;
 
 import br.com.comprex.comprex.R;
 import br.com.comprex.comprex.dao.ProdutoListaDAO;
@@ -64,6 +65,7 @@ public class QuantidadeProdutoDialogFragment extends DialogFragment {
 
                 QuantidadeProdutoDialogFragment.this.getDialog().dismiss();
 
+                Toast.makeText(getActivity(), "Produto(s) adicionado(s) com sucesso", Toast.LENGTH_SHORT).show();
                 getActivity().finish();
             }
         });

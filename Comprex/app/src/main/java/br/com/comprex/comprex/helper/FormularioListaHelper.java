@@ -16,8 +16,11 @@ public class FormularioListaHelper {
 
     public Lista getLista() {
         Lista lista = new Lista();
-        lista.setNome(this.campoNome.getText().toString());
+        lista.setNome(this.campoNome.getText().toString().toUpperCase());
         return lista;
     }
 
+    public EditText getCampoNome() {
+        return campoNome;
+    }
 }

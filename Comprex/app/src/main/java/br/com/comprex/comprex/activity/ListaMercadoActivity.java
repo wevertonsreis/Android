@@ -2,6 +2,7 @@ package br.com.comprex.comprex.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -15,22 +16,26 @@ import br.com.comprex.comprex.adapter.MercadoAdapter;
 import br.com.comprex.comprex.dao.MercadoDAO;
 import br.com.comprex.comprex.modelo.Mercado;
 
+/**
+ * Controla as acoes activity_lista_mercado
+ */
 public class ListaMercadoActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private ListView listaDeMercado;
+    private ListView listViewDeMercado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_mercado);
 
-        toolbar = (Toolbar) findViewById(R.id.lista_mercado_toolbar);
+        carregarViews();
+
         setSupportActionBar(toolbar);
 
         carregarLista();
 
-        listaDeMercado.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listViewDeMercado.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -46,17 +51,24 @@ public class ListaMercadoActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Carrega os componentes do layout
+     */
+    private void carregarViews() {
+        toolbar = (Toolbar) findViewById(R.id.lista_mercado_toolbar);
+        listViewDeMercado = (ListView) findViewById(R.id.lista_mercado_lista);
+    }
+
+    /**
+     * Carrega a lista de mercado
      */
     private void carregarLista() {
         MercadoDAO mercadoDAO = new MercadoDAO(this);
 
         List<Mercado> mercados = mercadoDAO.buscarTodas();
 
-        listaDeMercado = (ListView) findViewById(R.id.lista_mercado_lista);
-
         MercadoAdapter mercadoAdapter = new MercadoAdapter(mercados, this);
 
-        listaDeMercado.setAdapter(mercadoAdapter);
+        listViewDeMercado.setAdapter(mercadoAdapter);
     }
+
 }
