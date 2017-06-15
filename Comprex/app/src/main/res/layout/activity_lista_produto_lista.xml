@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/lista_produto_lista_toolbar" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lista_produto_lista_lista"
+        android:layout_below="@id/lista_produto_lista_toolbar"
+        android:layout_above="@+id/linearLayout">
+
+    </ListView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:src="@drawable/ic_action_add_shopping_cart"
+        android:tint="@android:color/white"
+        android:id="@+id/lista_produto_lista_fab"/>
+
+    <ImageView
+        android:id="@+id/lista_produto_imagem_informativa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:srcCompat="@drawable/informativo_mercadorias" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?attr/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: "
+            android:textSize="20dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/lista_produto_total"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

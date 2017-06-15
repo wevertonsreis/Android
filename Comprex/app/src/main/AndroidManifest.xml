@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.comprex.comprex">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:theme="@style/AppTheme.TelaCheia">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/AppTheme.TelaCheia"/>
+
+        <activity
+            android:name=".activity.CadastroUsuarioActivity"
+            android:parentActivityName=".activity.LoginActivity"/>
+
+        <activity
+            android:name=".activity.ListaMercadoActivity" />
+
+        <activity android:name=".activity.ListaListaActivity"
+            android:parentActivityName=".activity.ListaMercadoActivity"/>
+
+        <activity android:name=".activity.FormularioListaActivity"
+            android:parentActivityName=".activity.ListaListaActivity"/>
+
+        <activity android:name=".activity.ListaProdutoListaActivity"
+            android:parentActivityName=".activity.ListaListaActivity"/>
+
+        <activity android:name=".activity.ListaProdutoMercadoActivity"
+            android:parentActivityName=".activity.ListaProdutoListaActivity"/>
+
+    </application>
+
+</manifest>
